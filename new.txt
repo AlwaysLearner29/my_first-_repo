@@ -1,1 +1,142 @@
 my first commit
+Top 20 Git Commands
+ git config
+
+This sets the configuration values for your username, email, gpg key, preferred diff algorithm, file formats and more:
+
+git config –global user.name “Your Username Here”
+git config –global user.email “user@domain.com”
+
+git init
+
+This initializes a git repository, and creates the initial .git directory in a new or already existing project:
+
+git init
+
+Initialized empty Git repository in /home/username/GIT/.git/
+
+git clone
+
+This command creates a Git repository copy from a remote source. The command will also add the original location as a remote location so you are able to fetch from it again and push to it if you have permissions:
+
+git clone git@github.com:user/test.git
+
+git add
+
+This will add file changes that are in your working directory to your index:
+
+git add
+
+git rm
+
+This will remove files from your index and your working directory so they will not be tracked:
+
+git rm filename
+
+git commit
+
+This Git command takes all of the changes written in the index, creates a new commit object pointing to it, and sets the branch to point to that new commit:
+
+git commit -m ‘committing added changes’
+git commit -a -m ‘committing all changes, equals to git add and git commit’
+
+git status
+
+This Git command shows the status of files in the index versus the working directory. It will list out files that are untracked (only in your working directory), modified (tracked but not yet updated in your index), and staged (added to your index and ready for committing):
+
+git status
+
+# On branch master #
+# Initial commit #
+# Untracked files: #
+# (use “git add <file>…” to include in what will be committed) #
+
+README
+
+git branch 
+
+This lists existing branches, including remote branches if ‘-a’ is provided. It will create a new branch if a branch name is provided:
+
+git branch -a * master remotes/origin/master
+
+git merge
+
+This will merge one or more branches into your current branch. It also automatically creates a new commit if there are no conflicts:
+
+git merge newbranchversion
+
+git reset
+
+This command will reset your index and working directory to the state of your last commit. Effectively taking you back:
+
+git reset –hard HEAD
+
+git tag
+
+This Git command tags a specific commit with a simple, human readable handle that never moves:
+
+git tag -a v2.0 -m ‘this is version 2.0 tag’
+
+git pull
+
+This will fetch all the files from the remote repository and merge them with your local one:
+
+git pull origin
+
+git push
+
+This Git command will push all the modified local objects to the remote repository and advances its branches:
+
+git push origin master
+
+git remote
+
+This shows all the remote versions of your repository:
+
+git remote origin
+
+git log
+
+This command will show a list of commits on a branch, and include the corresponding details:
+
+git log commit
+
+847ttg41e8a0d768fb37ff7adohs6754b61a99a0abe Author: User <user@domain.com> Date: Wed June 11 08:37:07 2014 +0400 first commit
+
+git diff
+
+This command will generate patch files or statistics of differences between paths or files in your git repository, index, or your working directory:
+
+git diff
+
+git archive
+
+This command will create a tar or zip file that includes the contents of a single tree from your repository:
+
+git archive –format=zip master^ README >file.zip
+
+git gc
+
+This is a garbage collector Git command. It will collect garbage from your repository and optimize the repository as well. You should run this periodically:
+
+git gc
+
+Counting objects: 7, done.
+Delta compression using up to 3 threads.
+Compressing objects: 100% (7/7), done.
+Writing objects: 100% (9/9), done.
+Total 9 (delta 1), reused 0 (delta 0)
+
+git fsck
+
+This will perform an integrity check of the Git file system and identify corrupted objects:
+
+git fsck
+
+git prune
+
+This Git command will remove objects that are no longer pointed to by any object in any reachable branch. Like pruning a tree of useless branches:
+
+git prune
+
+Understanding how to use Git commands is important if you are going to be using Git a lot. Hopefully some if these more popular Git commands are easy to use and understand.
